@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>add movie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <form action="/user/addshow" method="POST">
+    CHOOSE MOVIE NAME:
+    <select name="mname">
+        <%for(var i=0;i<data.length;i++){%>
+            <option value=<%=data[i].mname%>>
+                <%=data[i].mname%>
+            </option>
+        <%}%>
+    </select><br>
+    SEATS REQUIRED:<input type="number" min="1" name="sno" onchange=calculateAmount(this.value)><br>
+    PRICE:<input type="text"name="tot_amount" id="tot_amount"><br>
+    <input type="submit" value="BookMyTickets">
+    </form>
+    <script>
+        function calculateAmount(val)
+        { var tot_price = val * 100;
+        var divobj = document.getElementById('tot_amount');
+        divobj.value = tot_price;
+        }
+        </script>
+</body>
+</html>

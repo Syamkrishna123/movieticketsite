@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VIEW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <table border ="2">
+        <tr>
+            <th>MOVIE</th>
+            <th>LANGUAGE</th>
+            <th>DIRECTOR</th>
+            <th>STARINGS</th>
+            <th>TOTAL SEATS</th>
+            <th>PRICE</th>
+            <th>TIMING</th>
+        </tr>
+        <% for(var i=0; i<data.length; i++){%>
+        <tr>  
+            <td><%=data[i].mname %></td>
+            <td><%=data[i].lang %></td>
+            <td><%=data[i].dname %></td>
+            <td><%=data[i].staring %></td>
+            <td><%=data[i].seats %></td>
+            <td><%=data[i].rate %></td>
+            <td><%=data[i].timing %></td> 
+             
+        </tr>
+    <%}%>
+    </table>
+   
+</body>
+</html>

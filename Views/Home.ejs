@@ -1,0 +1,29 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    WELCOME <%=user %>
+
+    <%if(user=="admin"){%>
+        <div><a href="/admin/new">Add Show</a></div>
+        <div><a href="/admin/view">View Show</a></div>
+        <div><a href="/admin/edit">Edit Show</a></div>
+        <div><a href="/admin/delete">Delete Show</a></div>
+    <%}%>
+    <%if(user!="admin"){%>
+        <div><a href="/user/viewmovies">Movies</a></div>
+        <div><a href="/user/book">BookMyShow</a></div>
+        <div><a href="/user/view">ViewMyShow</a></div>
+        <div><a href="/user/edit">EditMyShow</a></div>
+        <div><a href="/user/delete">DeleteMyShow</a></div>
+    <%}%>
+    <div><a href="/logout">LOGOUT</a></div>
+</body>
+</html>
